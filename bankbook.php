@@ -3,13 +3,13 @@
 	$user_id = $_SESSION['user_id'];
 	// Check user login or not
 	if(!isset($_SESSION['username'])) {
-		header('Location: login.php');
+		header('Location: index.php');
 	}
 
 	// logout
 	if(isset($_POST['logout'])) {
 		session_destroy();
-		header('Location: login.php');
+		header('Location: index.php');
 	}
 	//edit user info
 	if(isset($_POST['edit'])) {

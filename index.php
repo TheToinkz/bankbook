@@ -51,7 +51,7 @@
 <html>
 	<head>
 		<title>MyBankNote Login Page</title>
-		<link rel="stylesheet" type="text/css" href="login.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	<body>
 		<p class = "title"> My BankBook </p>

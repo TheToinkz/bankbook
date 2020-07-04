@@ -7,7 +7,7 @@
     }
 	if(isset($_POST['cancel'])) {
         $_SESSION['est_bal'] = 0;
-		header('Location: login.php');
+		header('Location: index.php');
 	}
 	if(isset($_POST['s_signup'])) { 
 		$server = "localhost";
