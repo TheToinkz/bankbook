@@ -23,7 +23,7 @@
 
 		$user_id = $_SESSION['user_id'];
 		
-		for($i = 0; $i < 6; $i++) {
+		for($i = 0; $i < 7; $i++) {
 			//edit username
 			if($i == 0 && $s_username != "" && is_string($s_username)) {
 				$sql = "UPDATE users SET username = '$s_username' where user_id = '$user_id'";
@@ -36,7 +36,7 @@
 				}
 			}
 			//edit password
-			if($i == 1 && $s_password != "") {
+			elseif($i == 1 && $s_password != "") {
 				$sql = "UPDATE users SET bb_password = '$s_password' where user_id = '$user_id'";
 				if(mysqli_query($conn, $sql)) {
 					//echo "Edit successful";
@@ -46,7 +46,7 @@
 				}
 			}
 			//edit current balance
-			if($i == 2 && $curr_bal != "" && is_numeric($curr_bal)) {
+			elseif($i == 2 && $curr_bal != "" && is_numeric($curr_bal)) {
 				$sql = "UPDATE users SET curr_bal = '$curr_bal' where user_id = '$user_id'";
 				if(mysqli_query($conn, $sql)) {
 					//echo "Edit successful";
@@ -56,7 +56,7 @@
 				}
 			}
 			//edit interest rate
-			if($i == 3 && $int_rate != "" && is_numeric($int_rate)) {
+			elseif($i == 3 && $int_rate != "" && is_numeric($int_rate)) {
 				$sql = "UPDATE users SET intrst_rate = '$int_rate' where user_id = '$user_id'";
 				if(mysqli_query($conn, $sql)) {
 					//echo "Edit successful";
@@ -66,7 +66,7 @@
 				}
 			}
 			//edit minimum amount to trigger interest rate
-			if($i == 4 && $min_amnt != "" && is_numeric($min_amnt)) {
+			elseif($i == 4 && $min_amnt != "" && is_numeric($min_amnt)) {
 				$sql = "UPDATE users SET amnt_for_intrst = '$min_amnt' where user_id = '$user_id'";
 				if(mysqli_query($conn, $sql)) {
 					//echo "Edit mnamnt successful";
@@ -76,7 +76,7 @@
 				}
 			}
 			//edit whether increase is monthly or yearly
-			if($i == 5 && $increase != "" && is_string($increase)) {
+			elseif($i == 5 && $increase != "" && is_string($increase)) {
 				$sql = "UPDATE users SET when_to_increase = '$increase' where user_id = '$user_id'";
 				if(mysqli_query($conn, $sql)) {
 					//echo "Edit successful";
@@ -86,7 +86,7 @@
 				}
 			}
 			//edit date of account creation
-			if($i == 6 && $date != "") {
+			elseif($i == 6 && $date != "") {
 				$sql = "UPDATE users SET date_of_increase = '$date' where user_id = '$user_id'";
 				if(mysqli_query($conn, $sql)) {
 					//echo "Edit successful";
