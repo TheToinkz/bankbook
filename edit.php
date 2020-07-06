@@ -36,7 +36,7 @@
 				}
 			}
 			//edit password
-			if($i == 1 && $s_password != "" && is_string($s_password)) {
+			if($i == 1 && $s_password != "") {
 				$sql = "UPDATE users SET bb_password = '$s_password' where user_id = '$user_id'";
 				if(mysqli_query($conn, $sql)) {
 					//echo "Edit successful";
