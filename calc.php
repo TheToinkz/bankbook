@@ -5,6 +5,10 @@
         $_SESSION['est_bal'] = 0;
 		header('Location: bankbook.php');
     }
+    
+    if(isset($_POST['curr_exc'])) {
+		header('Location: currconv.php');
+    }
 
     $date_query = "select date_of_increase as date_of_increase from users where username='".$_SESSION['username']."'";
 	$result = mysqli_query($conn,$date_query);
@@ -52,6 +56,9 @@
 	</head>
 	<body>
 		<p class = "title"> My BankBook Interest Calculator </p>
+        <form method = "post" action = "" >
+				<input type = "submit" name = "curr_exc" value = "Currency Exchange">
+		</form>
 		<div class = "content">
             <p> *Note: This is only an estimation of your balance* </p>
             <p>Please input the date you want to estimate the amount of balance.(Please follow the format)</p>

@@ -188,7 +188,6 @@
 				<form method = "post" action = "" class = "button">
 					<input type = "submit" name = "intrst_incrs" value = "Add Balance by Interest" onclick = "return confirm('Do you want to increase balance through interest? If cancel button does not work wait for a few seconds before clicking');"> 
 				</form>
-
 				
 			</div>
 		</div>
