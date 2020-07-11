@@ -64,7 +64,7 @@
 ?>
 <html>
 	<head>
-		<title>MyBankNote SignUp Page</title>
+		<title>MyBankBook SignUp Page</title>
 		<link rel="stylesheet" type="text/css" href="signup.css">
 	</head>
 	<body>

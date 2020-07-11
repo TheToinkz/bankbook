@@ -33,11 +33,7 @@
 			<input type = "submit" name = "remove" value = "Remove">
 		</form>
 		<?php 
-			$server = "localhost";
-			$username = "root";
-			$password = "";
-			$dbname = "bankbookdb";
-			$mysqli = new mysqli($server, $username, $password, $dbname); 
+			include "config.php";
 			$query = "SELECT * FROM transactions ORDER BY transaction_id DESC";
 			
 			
@@ -50,7 +46,7 @@
 					<td style = "width: 100px"> Date Accomplished </td>
 				</tr>';
 			
-			if ($result = $mysqli->query($query)) {
+			if ($result = $conn->query($query)) {
 				while ($row = $result->fetch_assoc()) {
 					if($row["user_id"] == $_SESSION["user_id"]) {
 						$trans_id = $row["transaction_id"];

@@ -3,7 +3,7 @@
 
 	if (isset($_SESSION['username'])) {
         if($_SESSION['username'] != "") {
-			header('Location: banknote.php');
+			header('Location: banknbook.php');
 		}
     }
 	
@@ -33,7 +33,7 @@
 				$row = mysqli_fetch_assoc($result);
 				$intrst_rate = $row['intrst_rate'];
 				$_SESSION['intrst_rate'] = $intrst_rate;
-				header('Location: banknote.php');
+				header('Location: bankbook.php');
 			} 
 			else {
 				echo "Wrong Username or Password";
@@ -50,7 +50,7 @@
 ?>
 <html>
 	<head>
-		<title>MyBankNote Login Page</title>
+		<title>MyBankBook Login Page</title>
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	<body>
