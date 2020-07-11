@@ -33,7 +33,6 @@
 			<input type = "submit" name = "remove" value = "Remove">
 		</form>
 		<?php 
-			include "config.php";
 			$query = "SELECT * FROM transactions ORDER BY transaction_id DESC";
 			
 			

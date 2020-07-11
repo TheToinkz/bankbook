@@ -1,7 +1,13 @@
 <?php
+    include "config.php";
     if(!isset($_SESSION['username'])) {
 		header('Location: index.php');
-	}
+    }
+    
+    if(isset($_POST['back'])) {
+        $_SESSION['est_bal'] = 0;
+		header('Location: bankbook.php');
+    }
 ?>
 <html>
 	<head>
@@ -45,36 +51,37 @@
                         $CAD_price = round(($base_price * $response->conversion_rates->CAD), 2);
                         $SAR_price = round(($base_price * $response->conversion_rates->SAR), 2);
                         $CNY_price = round(($base_price * $response->conversion_rates->CNY), 2);
-                        echo '<table border="1" cellspacing="2" cellpadding="2" align = "center" style = "margin-top: 20px; background: #FFFFFF;" width = "1000px"> 
-                        <tr> 
+
+                        //USD
+                        echo '<tr> 
                             <td style = "width: 100px"> USD (USA)</td>
                             <td style = "width: 300px">' .$response->conversion_rates->USD. '</td> 
                             <td style = "width: 300px">' .$USD_price. '</td>
                         </tr>';
-                        echo '<table border="1" cellspacing="2" cellpadding="2" align = "center" style = "margin-top: 20px; background: #FFFFFF;" width = "1000px"> 
-                        <tr> 
+                        //EUR
+                        echo '<tr> 
                             <td style = "width: 100px"> EUR (Europe)</td>
                             <td style = "width: 300px">' .$response->conversion_rates->EUR. '</td> 
                             <td style = "width: 300px">' .$EUR_price. '</td>
                         </tr>';
-                        echo '<table border="1" cellspacing="2" cellpadding="2" align = "center" style = "margin-top: 20px; background: #FFFFFF;" width = "1000px"> 
-                        <tr> 
+                        //CAD
+                        echo '<tr> 
                             <td style = "width: 100px"> CAD (Canada)</td>
                             <td style = "width: 300px">' .$response->conversion_rates->CAD. '</td> 
                             <td style = "width: 300px">' .$CAD_price. '</td>
                         </tr>';
-                        echo '<table border="1" cellspacing="2" cellpadding="2" align = "center" style = "margin-top: 20px; background: #FFFFFF;" width = "1000px"> 
-                        <tr> 
+                        //SAR
+                        echo '<tr> 
                             <td style = "width: 100px"> SAR (Saudi Arabia)</td>
                             <td style = "width: 300px">' .$response->conversion_rates->SAR. '</td> 
                             <td style = "width: 300px">' .$SAR_price. '</td>
                         </tr>';
-                        echo '<table border="1" cellspacing="2" cellpadding="2" align = "center" style = "margin-top: 20px; background: #FFFFFF;" width = "1000px"> 
-                        <tr> 
+                        //CNY
+                        echo '<tr> 
                             <td style = "width: 100px"> CNY (China)</td>
                             <td style = "width: 300px">' .$response->conversion_rates->CNY. '</td> 
                             <td style = "width: 300px">' .$CNY_price. '</td>
-                        </tr>';
+                        </tr> </table>';
                     }
 
                 }
