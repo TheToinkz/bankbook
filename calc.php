@@ -1,14 +1,15 @@
 <?php
-	include "config.php";
+    include "config.php";
+    
+    if(isset($_POST['curr_exc'])) {
+		header('Location: currconv.php');
+    }
 
     if(isset($_POST['back'])) {
         $_SESSION['est_bal'] = 0;
 		header('Location: bankbook.php');
     }
-    
-    if(isset($_POST['curr_exc'])) {
-		header('Location: currconv.php');
-    }
+
 
     $date_query = "select date_of_increase as date_of_increase from users where username='".$_SESSION['username']."'";
 	$result = mysqli_query($conn,$date_query);
