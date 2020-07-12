@@ -42,6 +42,7 @@
 					<td style = "width: 300px"> Balance Before </td> 
 					<td style = "width: 200px"> Amount Increased/Decreased </td> 
 					<td style = "width: 300px"> Balance After </td> 
+					<td style = "width: 100px"> Transaction Type</td>
 					<td style = "width: 100px"> Date Accomplished </td>
 				</tr>';
 			
@@ -52,6 +53,7 @@
 						$prebal = $row["pre_bal"];
 						$incr_decr = $row["balance_edit"];
 						$postbal = $row["post_bal"];
+						$transtype = $row["trans_type"];
 						$date_acc = $row["trans_date"];
 				
 						echo '<tr> 
@@ -59,7 +61,8 @@
 								<td style="width: 500px"> PHP '.$prebal.'</td> 
 								<td style="width: 200px">'.$incr_decr.'</td> 
 								<td style="width: 500px"> PHP '.$postbal.'</td> 
-								<td style="width: 200px">'.$date_acc.'</td> 
+								<td style="width: 100px"> PHP '.$transtype.'</td>
+								<td style="width: 100">'.$date_acc.'</td> 
 							</tr>';
 					}
 				}
