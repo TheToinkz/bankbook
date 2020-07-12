@@ -5,7 +5,7 @@
 		edit_data(); 
 	} 
 	if(isset($_POST['cancel'])) {
-		header('Location: bankbook.php');
+		header('Location: account.php');
 	}
 	function edit_data() {
 		$server = "localhost";
@@ -13,6 +13,7 @@
 		$password = "";
 		$dbname = "bankbookdb";
 		$conn = new mysqli($server, $username, $password, $dbname);
+		$conf_password = $_POST['conf_password'];
 		$s_username = mysqli_real_escape_string($conn, $_REQUEST['s_username']);
 		$s_password = mysqli_real_escape_string($conn, $_REQUEST['s_password']);
 		$curr_bal = mysqli_real_escape_string($conn, $_REQUEST['curr_bal']);
@@ -41,7 +42,7 @@
 				}
 			}
 			//edit password
-			elseif($i == 1 && $s_password != "") {
+			elseif($i == 1 && $s_password != "" && $s_password == $conf_password) {
 				if(is_string($s_password)) {
 					$sql = "UPDATE users SET bb_password = '$s_password' where user_id = '$user_id'";
 					if(mysqli_query($conn, $sql)) {
@@ -146,6 +147,7 @@
 			<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 					<div class = "prmpt"> Username: <input type = "text" name = "s_username" class = "prompt" placeholder = "username"> </div>
 					<div class = "prmpt"> Password: <input type = "password" name = "s_password" class = "prompt" > </div>
+					<div class = "prmpt"> Confirm Password: <input type = "password" name = "conf_password" class = "prompt" > </div>
 					<div class = "prmpt"> Current Balance: <input type = "text" name = "curr_bal" class = "prompt" placeholder = "Current Balance"> </div>
 					<div class = "prmpt"> Interest Rate: <input type = "text" name = "int_rate" class = "prompt" placeholder = "Number only without %"> </div>
 					<div class = "prmpt"> Minimum Amount for Interest: <input type = "text" name = "min_amnt" class = "prompt" placeholder = "2000"> </div>
@@ -153,7 +155,7 @@
 					<div class = "prmpt"> Date Account was made: <input type = "text" name = "date" class = "prompt" placeholder = "2020-12-25"> </div>
 					<div class = "button"> 
 						<input type = "submit" name = "edit" value = "Confirm"> 
-						<input type = "submit" name = "cancel" value = "Go Back to BankBook">
+						<input type = "submit" name = "cancel" value = "Back to Account Details">
 					</div>
 			</form>
 			

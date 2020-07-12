@@ -12,8 +12,8 @@
 		header('Location: index.php');
 	}
 	//edit user info
-	if(isset($_POST['edit'])) {
-		header('Location: edit.php');
+	if(isset($_POST['account'])) {
+		header('Location: account.php');
 	}
 	//check past transactions
 	if(isset($_POST['history'])) {
@@ -156,7 +156,7 @@
 		<form method = "post" action = "" class = "navbar">
 			<img src="b.png" class = "logo" alt="MyBankBook">
 			<input type = "submit" name = "logout" id = "logout" value = "Logout">
-			<input type = "submit" id = " edit" name = "edit" value = "Edit">
+			<input type = "submit" id = " account" name = "account" value = "Account Details">
 			<input type = "submit" id = "history" name = "history" value = "History">
 			<input type = "submit" name = "calc_intrst" value = "Calculate Balance By Interest Rate"> 
 		</form>
