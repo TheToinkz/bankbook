@@ -8,8 +8,8 @@ body {
 }
 
 .content {
-	width: 500px;
-	height: 300px;
+	width: 35%;
+	height: 350px;
 	border: solid 1px black;
 	border-radius: 10%;
 	background: #fffef0;
@@ -28,7 +28,7 @@ body {
 .prmpt {
 	margin-top: 10px;
 	margin-left: 10%;
-	width: 400px;
+	width: 400;
 }
 
 .button {

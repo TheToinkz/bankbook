@@ -57,12 +57,12 @@
 						$date_acc = $row["trans_date"];
 				
 						echo '<tr> 
-								<td style="width: 500px">'.$trans_id.'</td>
+								<td style="width: 100px">'.$trans_id.'</td>
 								<td style="width: 500px"> PHP '.$prebal.'</td> 
 								<td style="width: 200px">'.$incr_decr.'</td> 
 								<td style="width: 500px"> PHP '.$postbal.'</td> 
-								<td style="width: 100px"> PHP '.$transtype.'</td>
-								<td style="width: 100">'.$date_acc.'</td> 
+								<td style="width: 200px;"> '.$transtype.'</td>
+								<td style="width: 100px">'.$date_acc.'</td> 
 							</tr>';
 					}
 				}

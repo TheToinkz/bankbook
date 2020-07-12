@@ -102,9 +102,9 @@
 
 			$balance_edit = "+".$increment;
 			$post_bal = $curr_bal;
-			$trans_type = "Increment by Interest";
+			$trans_type = "Interest";
 			$trans_date = date('Y/m/d');
-			$trans_sql = "INSERT INTO transactions (user_id, pre_bal, balance_edit, post_bal, trans_type, trans_date) VALUES ('$user_id','$pre_bal', '$balance_edit', '$post_bal', '$trans_type' '$trans_date')";
+			$trans_sql = "INSERT INTO transactions (user_id, pre_bal, balance_edit, post_bal, trans_type, trans_date) VALUES ('$user_id','$pre_bal', '$balance_edit', '$post_bal', '$trans_type', '$trans_date')";
 
 
 			if(mysqli_query($conn, $sql)) {
