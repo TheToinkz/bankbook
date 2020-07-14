@@ -42,8 +42,8 @@
 				}
 			}
 			//edit password
-			elseif($i == 1 && $s_password != "" && $s_password == $conf_password) {
-				if(is_string($s_password)) {
+			elseif($i == 1 && $s_password != "") {
+				if(is_string($s_password) && $s_password == $conf_password) {
 					$sql = "UPDATE users SET bb_password = '$s_password' where user_id = '$user_id'";
 					if(mysqli_query($conn, $sql)) {
 						//echo "Edit successful";
@@ -53,7 +53,7 @@
 					}
 				}
 				else {
-					echo "Please follow correct format for Password.\n";
+					echo "Please follow correct format for Password and ensure that confirm password is similar to the new password.\n";
 				}
 			}
 			//edit current balance

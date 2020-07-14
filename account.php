@@ -120,7 +120,7 @@
                             </table>
                         </td>
                         <td>
-                            <img src = "https://image-charts.com/chart?chs=300x350&chd=t:'.$deposit_percentage.','.$withdraw_percentage.'&cht=p3&chl=Deposit%7CWithdraw&chan&chf=ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1">
+                            <img src = "https://image-charts.com/chart?chs=300x350&chtt=Monthly%20Transactions&chd=t:'.$deposit_percentage.','.$withdraw_percentage.'&cht=p3&chl=Deposit%7CWithdraw&chan&chf=ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1">
                         </td>
                     </tr>
                 </table>';
